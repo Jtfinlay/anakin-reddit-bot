@@ -98,15 +98,15 @@ module.exports = {
 
         let message = null;
 
-        // See if it is from a defined user
-        message = findAndExtractReply(comment, responses.userReplies);
+        //Try and find a response to a message.
+        message = findAndExtractMessage(comment, responses.messages);
         if (message) {
             return message;
         }
 
-        //Try and find a response to a message.
-        message = findAndExtractMessage(comment, responses.messages);
-        
+        // See if it is from a defined user
+        message = findAndExtractReply(comment, responses.userReplies);
+
         return message;
     }
 
