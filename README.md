@@ -4,8 +4,6 @@ A reddit bot that responds to movie quotes from comments in [/r/PrequelMemes](ht
 ### Conditions
 In [responses.json](responses.json) defines all of the possible comments to look for and defines arrays of possible responses to said comments. The bot will look for a key phrase using a regular expression and will pick a random response upon finding one.
 
-The bot will also keep track of what comments it has sent and will perform additional checks to common replies such as `"Good bot"` or `"Bad bot"`.
-
 ### Commands
 The bot will respond to the following commands:
 
