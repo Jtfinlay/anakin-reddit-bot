@@ -3,6 +3,24 @@ const messages = require('../messages');
 
 describe('messages and responses', () => {
 
+    it('should not reply twice', () => {
+        let comment = {
+            body: `it's over anakin, i have the high ground!`,
+            author: {
+                name: 'user_123456789'
+            },
+            replies: [{
+                body: 'My reply!',
+                author: {
+                    name: process.env.REDDIT_USER
+                }
+            }]
+        };
+
+        let message = messages.extractReply(comment);
+        expect(message).toBeNull();
+    })
+
     it('should return null if no matches', () => {
         let comment = {
             body: 'This is not a quote from the prequels.',

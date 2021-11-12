@@ -24,6 +24,7 @@ const stream = client.CommentStream({
 let commentIds = []; //TODO: This technique could be better I suppose.
 
 stream.on('comment', comment => {
+    console.log('process comment');
     //Go through each possible response and look for a match.
     const reply = messages.extractReply(comment, commentIds);
 

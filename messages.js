@@ -75,11 +75,20 @@ function findAndExtractMessage(comment, arr) {
     return null;
 }
 
+function hasReplied(comments) {
+    return comments && comments.findIndex(c => c.author.name === process.env.REDDIT_USER) >= 0;
+}
+
 module.exports = {
 
     extractReply(comment) {
         //make sure we're not replying to ourselves.
         if (comment.author.name === process.env.REDDIT_USER) {
+            return null;
+        }
+
+        if (hasReplied(comment.replies)) {
+            console.log('Not answering twice!');
             return null;
         }
 
