@@ -152,31 +152,4 @@ describe('messages and responses', () => {
         expect(message).not.toBeNull();
         expect(message).toContain('lecture');
     });
-
-    it('should respond to commands', () => {
-        let comment = {
-            body: `Anakin, !dewit`,
-            author: {
-                name: 'user_123456789'
-            }
-        };
-
-        let message = messages.extractReply(comment);
-
-        expect(message).not.toBeNull();
-    });
-
-    it('should not respond to malformed commands', () => {
-        let comment = {
-            body: `!dewittt`,
-            author: {
-                name: 'user_123456789'
-            }
-        };
-
-        let message = messages.extractReply(comment);
-
-        expect(message).toBeNull();
-    });
-
 });
