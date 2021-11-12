@@ -20,8 +20,8 @@
                 "Quiet as a tomb. I don't like just waiting here for something to happen to her.",
                 "I know, but we also want to catch this assassin. Don't we, Master?",
                 "Not another lecture, Master. Not on the economics of politics.... It's too early in the morning... and besides, you're generalising. The Chancellor doesn't appear to be corrupt",
-                "I shouldn't...",
-                "I shouldn't have done that, Chancellor. It's no the Jedi way."
+                "I retransmitted it as you requested, Master. Then we decided to come and rescue you.",
+                "No we're not!! Land this ship!"
             ]
         },
         {
@@ -29,9 +29,11 @@
             "responses": [
                 "He could actually...save people from death?",
                 "Is it possible to learn this power?",
-                " I will do whatever you ask.",
+                "I will do whatever you ask.",
                 "Just help me save Padmé's life. I can't live without her.",
-                "I pledge myself to your teachings."
+                "I pledge myself to your teachings.",
+                "I shouldn't...",
+                "I shouldn't have done that, Chancellor. It's not the Jedi way."
             ]
         },
         {
