@@ -1,29 +1,43 @@
 {
-    "replies": [
+    "userReplies": [
         {
-            "pattern": "good bot",
+            "user": "Obiwan-Kenobi-Bot",
             "responses": [
-                "May the force be with you.",
-                "Thank you, master.",
-                "Yippee!",
-                "This is where the fun begins.",
-                "[This is where the fun begins.](https://68.media.tumblr.com/8e8e249cd3ce3e4e0e250089cb043a65/tumblr_inline_ovgcvzb7ch1v6lksp_540.gif)",
-                "Now this is shit-posting!",
-                "Are you an angel?",
-                "You love me? I thought we had decided not to fall in love. That we'd be forced to live a lie and that it would destroy our lives.",
-                "Thank you, your excellency.",
-                "You're a Jedi Knight, aren't you?",
-                "You are so... beautiful.",
-                "[You are so... beautiful.](https://68.media.tumblr.com/527595e44d61456a651e7291557bbeeb/tumblr_ny2j2q8qKB1rjhloyo1_500.gif)",
-                "I was glad to meet you too!",
-                "These are my friends, Mom.",
-                "I'm building a droid, wanna see?",
-                "Have you come to free me? I think you have.",
-                "IT'S WORKING, IT'S WORKING!",
-                "Do you mean that I get to go with you on your starship?!",
-                "You're a Jedi too? Pleased to meet you.",
-                "Thank you, your highness.",
-                "Shields up!"
+                "Obi-Wan, may the force be with you.",
+                "From my point of view, the Jedi are evil!",
+                "You mean, do I know how to land what's left of this thing?",
+                "Well, you know, Master, I couldn't find a speeder that I really liked…",
+                "If you're not with me, then you're my enemy!",
+                "You will not take her from me!",
+                "I should've known the Jedi were plotting to take over!",
+                "You underestimate my power!",
+                "I HATE YOU!",
+                "There isn't a droid made that can out fly you, Master, and no other way to get to the Chancellor...",
+                "Come on, master",
+                "I'm coming around on your tail.",
+                "I know, I know!",
+                "Why else do you think we were assigned to her, if not to find the killer? Protection is a job for local security... not Jedi. It's overkill, Master. Investigation is implied in our mandate.",
+                "Quiet as a tomb. I don't like just waiting here for something to happen to her.",
+                "I know, but we also want to catch this assassin. Don't we, Master?",
+                "Not another lecture, Master. Not on the economics of politics.... It's too early in the morning... and besides, you're generalising. The Chancellor doesn't appear to be corrupt",
+                "I shouldn't...",
+                "I shouldn't have done that, Chancellor. It's no the Jedi way."
+            ]
+        },
+        {
+            "user": "sheev-bot",
+            "responses": [
+                "He could actually...save people from death?",
+                "Is it possible to learn this power?",
+                " I will do whatever you ask.",
+                "Just help me save Padmé's life. I can't live without her.",
+                "I pledge myself to your teachings."
+            ]
+        },
+        {
+            "user": "GryvousBot",
+            "responses": [
+                "General Grievous… you're shorter than I expected."
             ]
         }
     ],
@@ -92,6 +106,26 @@
             "pattern": "he could even keep the ones he cared about from dying[.!]?$",
             "responses": [
                 "He could actually save people from death?"
+            ]
+        },
+        {
+            "pattern": "Anakin",
+            "responses": [
+                "One day, I will become the greatest Jedi EVER. I will even learn how to stop people from dying.",
+                "You're asking me to be rational. I know that is something I cannot do.",
+                "I've got a bad feeling about this.",
+                "You underestimate my power!",
+                "Sometimes we must let go of our pride and do what is requested of us.",
+                "I see through the lies of the Jedi. I do not fear the dark side as you do. I have brought peace, freedom, justice, and security to my new empire.",
+                "Are you an angel?",
+                "I've heard the deep space pilots talk about them. They live on the moons of Iego, I think. They're the most beautiful creatures in the universe.",
+                "I listen to all the traders and star pilots who come through here. I'm a pilot, you know, and someday I'm going to fly away from this place.",
+                "Mom, you said that the biggest problem in the universe is no one helps each other.",
+                "Something's happening. I'm not the Jedi I should be. I want more. And I know I shouldn't.",
+                "Lives are in danger, Ahsoka. We can't just turn our backs on them.",
+                "But try to remember, always put purpose ahead of your feelings.",
+                "Attachment is forbidden. Possession is forbidden. Compassion, which I would define as unconditional love, is essential to a Jedi's life. So you might say that we are encouraged to love.",
+                "This is where the fun begins. Ten Vulture Droids straight ahead, coming down the left side. "
             ]
         },
         {

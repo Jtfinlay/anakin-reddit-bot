@@ -1,4 +1,5 @@
 const responses = require('./responses.json');
+const ignoreList = require('./ignore-list.json');
 
 const groupMatchRegex = /\$(\d*)/gi;
 
@@ -10,17 +11,18 @@ function extractMessage(comment, resp) {
     if (matches && matches.length > 0) {
         //if we get to here then we can extract a response. 
         //Pick a random response to send back.
-        if (resp.responses)
+        if (resp.responses) {
             message = getRandomArrayItem(resp.responses);
-        else
+        } else {
             message = resp.response;
+        }
 
         //Check if the message contains a group match keyword, i.e $0, $1 ect.
         //A $ symbol followed by a number indicates the matching group to add to the text.
         let groupMatch = groupMatchRegex.exec(message);
 
         //Go through each match and extract the group from the original message.
-        while(groupMatch != null) {
+        while (groupMatch != null) {
             let identifier = groupMatch[0];
             let index = parseInt(groupMatch[1]);
 
@@ -51,13 +53,23 @@ function replaceSpaces(text) {
     return text.replace(new RegExp(' ', 'g'), '&#32;');
 }
 
+function findAndExtractReply(comment, replies) {
+    for (let i = 0; i < replies.length; i++) {
+        let resp = replies[i];
+        if (comment.author.name === resp.user) {
+            return getRandomArrayItem(resp.responses);
+        }
+    }
+}
+
 function findAndExtractMessage(comment, arr) {
-    for(let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         let resp = arr[i];
         let message = extractMessage(comment, resp);
 
-        if (message)
+        if (message) {
             return message;
+        }
     }
 
     return null;
@@ -65,30 +77,34 @@ function findAndExtractMessage(comment, arr) {
 
 module.exports = {
 
-    extractReply(comment, prevCommentIds = []) {
+    extractReply(comment) {
         //make sure we're not replying to ourselves.
-        if (comment.author.name === process.env.REDDIT_USER)
+        if (comment.author.name === process.env.REDDIT_USER) {
             return null;
-    
-        let message = null;
-        
-        if (prevCommentIds.includes(comment.parent_id)) {
-            //This comment is a reply to one of ours, check for a reply.
-            message = findAndExtractMessage(comment, responses.replies);
         }
 
-        if (message)
+        if (ignoreList.users.includes(comment.author.name)) {
+            return null;
+        }
+
+        let message = null;
+
+        // See if it is from a defined user
+        message = findAndExtractReply(comment, responses.userReplies);
+        if (message) {
             return message;
-    
+        }
+
         //Try and find a response to a message.
         message = findAndExtractMessage(comment, responses.messages);
 
-        if (message)
+        if (message) {
             return message;
+        }
 
         //Try and find a response to a command.
         message = findAndExtractMessage(comment, responses.commands);
-    
+
         return message;
     }
 

@@ -26,22 +26,23 @@ let commentIds = []; //TODO: This technique could be better I suppose.
 stream.on('comment', comment => {
     //Go through each possible response and look for a match.
     const reply = messages.extractReply(comment, commentIds);
-    
-    if (!reply)
+
+    if (!reply) {
         return;
+    }
 
     console.log(`Found message: ${comment.body}`);
     console.log(`Responding with: ${reply}`);
-    
-    comment.reply(reply)
-    .then(resp => {
-        console.log(`Responded to message.`);
 
-        //Add the comment id to the array, we'll use it to
-        //check if a user has replied to one of our comments.
-        commentIds.push('t1_' + resp.id);
-    })
-    .catch(err => {
-        console.error(err);
-    });
+    comment.reply(reply)
+        .then(resp => {
+            console.log(`Responded to message.`);
+
+            //Add the comment id to the array, we'll use it to
+            //check if a user has replied to one of our comments.
+            commentIds.push('t1_' + resp.id);
+        })
+        .catch(err => {
+            console.error(err);
+        });
 });

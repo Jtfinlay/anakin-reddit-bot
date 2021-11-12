@@ -56,19 +56,55 @@ describe('messages and responses', () => {
         expect(message).toContain(comment.author.name);
     });
 
-    it('should reply to a user if good bot is mentioned.', () => {
+    it('should reply to Obiwan-bot', () => {
         let comment = {
-            parent_id: '123',
-            body: `Good bot.`,
+            body: 'Test test',
             author: {
-                name: 'user_123456789'
+                name: 'Obiwan-Kenobi-Bot'
             }
         };
-
         let prevCommentIds = [comment.parent_id];
 
         let message = messages.extractReply(comment, prevCommentIds);
+        expect(message).not.toBeNull();
+    });
 
+    it('should reply to Sheev-bot', () => {
+        let comment = {
+            body: 'Test test',
+            author: {
+                name: 'sheev-bot'
+            }
+        };
+        let prevCommentIds = [comment.parent_id];
+
+        let message = messages.extractReply(comment, prevCommentIds);
+        expect(message).not.toBeNull();
+    });
+
+    it('should not reply to an ignored user', () => {
+        let comment = {
+            body: 'Anakin',
+            author: {
+                name: 'example-user'
+            }
+        };
+        let prevCommentIds = [comment.parent_id];
+
+        let message = messages.extractReply(comment, prevCommentIds);
+        expect(message).toBeNull();
+    });
+
+    it('should reply to keyword of Anakin', () => {
+        let comment = {
+            body: 'Anakin',
+            author: {
+                name: 'user_12334545'
+            }
+        };
+        let prevCommentIds = [comment.parent_id];
+
+        let message = messages.extractReply(comment, prevCommentIds);
         expect(message).not.toBeNull();
     });
 
