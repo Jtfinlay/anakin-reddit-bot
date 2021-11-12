@@ -28,7 +28,7 @@ describe('messages and responses', () => {
 
         expect(message).not.toBeNull();
     });
-    
+
     it('should not care about case sensitivity', () => {
         let comment = {
             body: `IT'S OVER ANAKIN, I HAVE THE HIGH GROUND!`,
@@ -71,23 +71,7 @@ describe('messages and responses', () => {
 
         expect(message).not.toBeNull();
     });
-    
-    it('should reply to a user if bad bot is mentioned.', () => {
-        let comment = {
-            parent_id: '123',
-            body: `Bad bot.`,
-            author: {
-                name: 'user_123456789'
-            }
-        };
 
-        let prevCommentIds = [comment.parent_id];
-
-        let message = messages.extractReply(comment, prevCommentIds);
-
-        expect(message).not.toBeNull();
-    });
-    
     it('should not reply to itself', () => {
         let comment = {
             body: `It's over Anakin, I have the high ground!`,
@@ -103,7 +87,7 @@ describe('messages and responses', () => {
 
     it('should replace group match keywords with text contained in the comment', () => {
         let comment = {
-            body: `He could even keep the ones he cared about from memes.`,
+            body: `become the very thing you swore to destroy`,
             author: {
                 name: 'user_123456789'
             }
@@ -112,7 +96,7 @@ describe('messages and responses', () => {
         let message = messages.extractReply(comment);
 
         expect(message).not.toBeNull();
-        expect(message).toContain('memes');
+        expect(message).toContain('lecture');
     });
 
     it('should respond to commands', () => {
@@ -141,29 +125,4 @@ describe('messages and responses', () => {
         expect(message).toBeNull();
     });
 
-    it('should contain the github source url', () => {
-        let comment = {
-            body: `it's over anakin, i have the high ground!`,
-            author: {
-                name: 'user_123456789'
-            }
-        };
-
-        let message = messages.extractReply(comment);
-
-        expect(message).toContain(process.env.GITHUB_SOURCE_URL);
-    });
-    
-    it('should contain the github issues url', () => {
-        let comment = {
-            body: `it's over anakin, i have the high ground!`,
-            author: {
-                name: 'user_123456789'
-            }
-        };
-
-        let message = messages.extractReply(comment);
-
-        expect(message).toContain(process.env.GITHUB_ISSUES_URL);
-    });
 });

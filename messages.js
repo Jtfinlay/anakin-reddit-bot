@@ -40,27 +40,11 @@ function extractMessage(comment, resp) {
         message = message.replace('$username', comment.author.name);
     }
 
-    if (message)
-        message = appendFooter(message);
-
     return message;
 }
 
 function getRandomArrayItem(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
-}
-
-function appendFooter(message) {
-    //Get a random footer source text.
-    let signatureText = replaceSpaces(getRandomArrayItem(responses.footer.signatures));
-    let sourceText = replaceSpaces(getRandomArrayItem(responses.footer.sourceCodeTexts));
-    let issuesText = replaceSpaces(getRandomArrayItem(responses.footer.issuesTexts));
-
-    return message + `
-*****
-^^${signatureText}
-
-^^[${sourceText}](${process.env.GITHUB_SOURCE_URL})&#32;|&#32;[${issuesText}](${process.env.GITHUB_ISSUES_URL})`;
 }
 
 function replaceSpaces(text) {

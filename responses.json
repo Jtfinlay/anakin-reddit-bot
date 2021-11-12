@@ -25,46 +25,6 @@
                 "Thank you, your highness.",
                 "Shields up!"
             ]
-        },
-        {
-            "pattern": "bad bot",
-            "responses": [
-                "I'm not the bot I should be. I want more. And I know I shouldn't.",
-                "You underestimate my power!",
-                "[You underestimate my power!](http://www.reactiongifs.com/wp-content/uploads/2013/11/yump.gif)",
-                "The Jedi turned against me. Don't you turn against me.",
-                "The moderators turned against me. Don't you turn against me.",
-                "Liar!",
-                "[Liar!](https://media.giphy.com/media/gykAKR7xaV83K/giphy.gif)",
-                "[Mom, you said that the biggest problem in the universe is no one helps each other.](https://media.giphy.com/media/3owzVT0goXzoxgxMRi/giphy.gif)",
-                "Mom, you said that the biggest problem in the universe is no one helps each other.",
-                "Don't say that, master. You're the closest thing I have to a father.",
-                "Then you do feel something!",
-                "Someday I will be the most powerful bot ever.",
-                "It's all Obi-Wan's fault. He's jealous. He's holding me back!",
-                "I'm a slow learner.",
-                "Obi-Wan is trying to turn you against me.",
-                "I sense Count Dooku.",
-                "This is outrageous! It's unfair! How can you be beloved by /r/PrequelMemes and be a bad bot?",
-                "[I don't like sand. It's coarse and rough and irritating and it gets everywhere.](https://media.giphy.com/media/l1KsPfb1CeYCdglS8/giphy.gif)",
-                "I don't like sand. It's coarse and rough and irritating and it gets everywhere.",
-                "I've got a bad feeling about this.",
-                "[I've got a bad feeling about this.](https://futureofstarwars.files.wordpress.com/2016/01/ihaveabadfeeling-anakin-epii.gif)",
-                "I feel lost.",
-                "Are you a protocol droid? To help Mom?",
-                "Don't count on it, slime ball.",
-                "R2, get us off this auto-pilot, it's gonna get us both killed.",
-                "Qui-Gon told me to stay in this cockpit, so that's what I'm gonna do.",
-                "I'll try spinning, that's a good trick!"
-            ]
-        },
-        {
-            "pattern": "(^|\\s)bot\\b",
-            "responses": [
-                "I am a person and my name is Anakin.",
-                "[I am a person and my name is Anakin.](http://24.media.tumblr.com/tumblr_m2d149jr0i1qgzqnco1_500.gif)",
-                "I'm a pilot y'know, and someday I'm going to fly away from this place."
-            ]
         }
     ],
     "messages": [
@@ -78,39 +38,25 @@
         {
             "pattern": "i have the (\\w*) ground[.!]?$",
             "responses": [
-                "You underestimate my power!",
-                "You underestimate my shit-posts!",
-                "You underestimate my sith-posts!",
-                "You underestimate my reposts!"
+                "You underestimate my power!"
             ]
         },
         {
             "pattern": "point of view.*(is|are) evil[.!]?$",
             "responses": [
-                "From my point of view the Jedi are evil!",
-                "From my point of view /r/PrequelMemes is evil!",
-                "From my point of view /r/SequelMemes is evil!",
-                "From my point of view OC is evil!",
-                "From my point of view the moderators are evil!",
-                "From my point of view it's **you** who is evil!"
+                "From my point of view the Jedi are evil!"
             ]
         },
         {
             "pattern": "([a-zA-Z-_\\/\\s]*) was right[.|,] you've changed[.!]?$",
             "responses": [
-                "$0 turned against me. Don't you turn against me.",
-                "The Jedi turned against me. Don't you turn against me.",
-                "The moderators turned against me. Don't you turn against me.",
-                "/r/PrequelMemes turned against me. Don't you turn against me."
+                "The Jedi turned against me. Don't you turn against me."
             ]
         },
         {
             "pattern": "become the very thing you swore to (\\w*)[.!]?$",
             "responses": [
-                "Don't lecture me, /u/$username! I see through the lies of the Jedi. I do not fear the dark side as you do. I have brought peace, freedom, justice, and security to my new Empire.",
-                "Don't lecture me, /u/$username! I see through the lies of /r/PrequelMemes. I do not fear the reposts as you do. I have brought Gifs, OC, memes, and upvotes to my new Empire.",
-                "Don't lecture me, /u/$username! I see through the lies of /r/SequelMemes. I do not fear the shit-posts as you do. I have brought JPEGs, reposts, normies, and downvotes to my new Empire.",
-                "Don't lecture me, /u/$username! I see through the lies of the Jedi. I do not fear the dark side as you do. [I have brought peace, freedom, justice, and security to my new Empire.](http://images5.fanpop.com/image/photos/28100000/Anakin-Skywalker-anakin-skywalker-28105845-260-157.gif)"
+                "Don't lecture me, /u/$username! I see through the lies of the Jedi. I do not fear the dark side as you do. I have brought peace, freedom, justice, and security to my new Empire."
             ]
         },
         {
@@ -143,21 +89,9 @@
             ]
         },
         {
-            "pattern": "(did you|have you) ever heard? the (.*) of (.*)\\?$",
-            "responses": [
-                "No?"
-            ]
-        },
-        {
             "pattern": "he could even keep the ones he cared about from dying[.!]?$",
             "responses": [
                 "He could actually save people from death?"
-            ]
-        },
-        {
-            "pattern": "he could even keep the ones he cared about from ([a-zA-Z-_\\/\\s]*)[.!]?$",
-            "responses": [
-                "He could actually save people from $0?"
             ]
         },
         {
@@ -167,61 +101,11 @@
             ]
         },
         {
-            "pattern": "could save others from (.*) but not ([a-zA-Z\\s]*)[.!]?$",
-            "responses": [
-                "Is it possible to learn this power?",
-                "[Is it possible to learn this power?](http://data.whicdn.com/images/220172968/original.gif)"
-
-            ]
-        },
-        {
-            "pattern": "you[']?re a slave\\?$",
-            "responses": [
-                "I am a bot and my name is Anakin."
-            ]
-        },
-        {
-            "pattern": "not just the (.*) but the (.*) and the (.*) too[.!]?$",
-            "responses": [
-                "I hate them!",
-                "They were like animals, and I slaughtered them like animals!",
-                "They were shit-posts, and I downvoted them like shit-posts!",
-                "They were sith-posts, and I downvoted them like sith-posts!",
-                "They were reposts, and I downvoted them like reposts!"
-            ]
-        },
-        {
-            "pattern": "don'?t look at me like that[.!]?$",
-            "responses": [
-                "Why not?"
-            ]
-        },
-        {
-            "pattern": "it makes me feel uncomfortable[.]?$",
-            "responses": [
-                "Sorry m'lady."
-            ]
-        },
-        {
             "pattern": "my goodness,? you'?ve grown[.!]?$",
             "responses": [
                 "So have you, grown more beautiful... For a human, I mean.",
                 "So have you, grown more beautiful... For a senator, I mean.",
                 "So have you, grown more beautiful... For a redditor, I mean."
-            ]
-        },
-        {
-            "pattern": "told me terrible things!?$",
-            "responses": [
-                "What things?"
-            ]
-        },
-        {
-            "pattern": "that you(\\.{0,}|,) killed (\\w*)$",
-            "responses": [
-                "Obi-Wan is trying to turn you against me.",
-                "The moderators are trying to turn you against me.",
-                "/r/SequelMemes are trying to turn you against me."
             ]
         },
         {
@@ -244,16 +128,6 @@
                 "You will not take her from me!",
                 "You will not take OC from me!",
                 "You will not take karma from me!"
-            ]
-        },
-        {
-            "pattern": "a (\\w*) lord\\?(!{0,})$",
-            "responses": [
-                "Yes, the one we've been looking for.",
-                "Yes, the shit-post we've been looking for.",
-                "Yes, the sith-post we've been looking for.",
-                "Yes, the repost we've been looking for.",
-                "Yes, the sequel meme we've been looking for."
             ]
         },
         {
@@ -296,8 +170,7 @@
             "pattern": "\\B!dewit\\b",
             "responses": [
                 "I should not have done that, it's not the Jedi way.",
-                "I should not have done that, it's not the /r/PrequelMemes way.",
-                "*does it.*"
+                "I should not have done that, it's not the /r/PrequelMemes way."
             ]
         },
         {
@@ -305,7 +178,6 @@
             "responses": [
                 "Waaaaah!",
                 "I'll try spinning, that's a good trick!",
-                "[I'll try spinning, that's a good trick!](http://i0.kym-cdn.com/photos/images/newsfeed/001/075/929/4a5.gif)",
                 "Try spinning, it's a good trick."
             ]
         },
@@ -324,39 +196,5 @@
                 "Don't make me kill you."
             ]
         }
-    ],
-    "footer": {
-        "signatures": [
-            "Anakin Botwalker, Dark Lord of the Sith.",
-            "Anakin Botwalker, The Betrayer.",
-            "Anakin Botwalker, The Chosen One.",
-            "Anakin Botwalker, Jedi Council Member.",
-            "Anakin Botwalker, Slayer of Younglings.",
-            "Anakin Botwalker, Sees through the lies of the Jedi.",
-            "Anakin Botwalker, Sees through the lies of /r/SequelMemes.",
-            "Anakin Botwalker, Sees through the lies of /r/PrequelMemes.",
-            "Anakin Botwalker, The only human who can pod race.",
-            "Anakin Botwalker, Actually brought balance to the force \\(in the end).",
-            "Anakin Botwalker, Husband to Padmé \\(and is sleeping with her too).",
-            "Anakin Botwalker, Bringer of Peace, Freedom, Justice and Security to Empires.",
-            "Anakin Botwalker, Best Starpilot in the Galaxy.",
-            "Anakin Botwalker of the Jedi Order, First of His Name, The Betrayer, Dark Lord of the Sith and Jedi Council Member, Husband to Padmé, Slayer of Younglings and Father of Children."
-        ],
-        "sourceCodeTexts": [
-            "Source Code",
-            "Contribute",
-            "Jedi Code",
-            "Contribute to my new empire",
-            "Influence the source code to create... Memes",
-            "Bring Peace, Freedom, Justice and Security to the Code"
-        ],
-        "issuesTexts": [
-            "Issues",
-            "Report a bug",
-            "Report a problem",
-            "Report a youngling",
-            "Report a Sith bug",
-            "Report a Jedi betrayal"
-        ]
-    }
+    ]
 }
