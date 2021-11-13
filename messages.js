@@ -3,6 +3,9 @@ const ignoreList = require('./ignore-list.json');
 
 const groupMatchRegex = /\$(\d*)/gi;
 
+const KNOWN_BOTS = ["Obiwan-Kenobi-Bot", "sheev-bot"];
+const IGNORE_PHRASES = ["You were my brother, Anakin. I loved you."];
+
 function extractMessage(comment, resp) {
     let regex = new RegExp(resp.pattern, 'gi');
     let matches = regex.exec(comment.body);
@@ -26,8 +29,9 @@ function extractMessage(comment, resp) {
             let identifier = groupMatch[0];
             let index = parseInt(groupMatch[1]);
 
-            if (Number.isNaN(index))
+            if (Number.isNaN(index)) {
                 break;
+            }
 
             let origGroup = matches[index + 1].trim(); //returns captured group (...) in regex
 
@@ -39,7 +43,11 @@ function extractMessage(comment, resp) {
 
     //Check if the message contains any keywords.
     if (message && message.indexOf('$username') > -1) {
-        message = message.replace('$username', comment.author.name);
+        if (KNOWN_BOTS.includes('$username')) {
+            message = message.replace('$username', 'Master');
+        } else {
+            message = message.replace('$username', comment.author.name);
+        }
     }
 
     return message;
@@ -47,19 +55,6 @@ function extractMessage(comment, resp) {
 
 function getRandomArrayItem(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
-}
-
-function replaceSpaces(text) {
-    return text.replace(new RegExp(' ', 'g'), '&#32;');
-}
-
-function findAndExtractReply(comment, replies) {
-    for (let i = 0; i < replies.length; i++) {
-        let resp = replies[i];
-        if (comment.author.name === resp.user) {
-            return getRandomArrayItem(resp.responses);
-        }
-    }
 }
 
 function findAndExtractMessage(comment, arr) {
@@ -96,16 +91,13 @@ module.exports = {
             return null;
         }
 
-        let message = null;
-
-        //Try and find a response to a message.
-        message = findAndExtractMessage(comment, responses.messages);
-        if (message) {
-            return message;
+        if (IGNORE_PHRASES.includes(comment.body)) {
+            return null;
         }
 
-        // See if it is from a defined user
-        message = findAndExtractReply(comment, responses.userReplies);
+        let message = null;
+        
+        message = findAndExtractMessage(comment, responses.messages);
 
         return message;
     }

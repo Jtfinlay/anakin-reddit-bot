@@ -34,6 +34,19 @@ describe('messages and responses', () => {
         expect(message).toBeNull();
     });
 
+    it('should reply properly to the Darth Plagueis copy paste', () => {
+        let comment = {
+            body: 'Did you ever hear the tragedy of Darth Plagueis The Wise? I thought not. It’s not a story the Jedi would tell you. It’s a Sith legend. Darth Plagueis was a Dark Lord of the Sith, so powerful and so wise he could use the Force to influence the midichlorians to create life… He had such a knowledge of the dark side that he could even keep the ones he cared about from dying. The dark side of the Force is a pathway to many abilities some consider to be unnatural. He became so powerful… the only thing he was afraid of was losing his power, which eventually, of course, he did. Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep. Ironic. He could save others from death, but not himself.',
+            author: {
+                name: 'user_123456789'
+            }
+        };
+
+        let message = messages.extractReply(comment);
+
+        expect(message).toBe('Is it possible to learn this power?');
+    });
+
     it('should return a message if there are matches', () => {
         let comment = {
             body: `it's over anakin, i have the high ground!`,
@@ -74,32 +87,6 @@ describe('messages and responses', () => {
         expect(message).toContain(comment.author.name);
     });
 
-    it('should reply to Obiwan-bot', () => {
-        let comment = {
-            body: 'Test test',
-            author: {
-                name: 'Obiwan-Kenobi-Bot'
-            }
-        };
-        let prevCommentIds = [comment.parent_id];
-
-        let message = messages.extractReply(comment, prevCommentIds);
-        expect(message).not.toBeNull();
-    });
-
-    it('should reply to Sheev-bot', () => {
-        let comment = {
-            body: 'Test test',
-            author: {
-                name: 'sheev-bot'
-            }
-        };
-        let prevCommentIds = [comment.parent_id];
-
-        let message = messages.extractReply(comment, prevCommentIds);
-        expect(message).not.toBeNull();
-    });
-
     it('should not reply to an ignored user', () => {
         let comment = {
             body: 'Anakin',
@@ -124,6 +111,45 @@ describe('messages and responses', () => {
 
         let message = messages.extractReply(comment, prevCommentIds);
         expect(message).not.toBeNull();
+    });
+
+    it('should reply to keyword of master skywalker', () => {
+        let comment = {
+            body: 'Master Skywalker',
+            author: {
+                name: 'user_12334545'
+            }
+        };
+        let prevCommentIds = [comment.parent_id];
+
+        let message = messages.extractReply(comment, prevCommentIds);
+        expect(message).not.toBeNull();
+    });
+
+    it('should reply to keyword of general skywalker', () => {
+        let comment = {
+            body: 'general skywalker',
+            author: {
+                name: 'user_12334545'
+            }
+        };
+        let prevCommentIds = [comment.parent_id];
+
+        let message = messages.extractReply(comment, prevCommentIds);
+        expect(message).not.toBeNull();
+    });
+
+    it('should not reply to rey skywalker', () => {
+        let comment = {
+            body: 'rey skywalker',
+            author: {
+                name: 'user_12334545'
+            }
+        };
+        let prevCommentIds = [comment.parent_id];
+
+        let message = messages.extractReply(comment, prevCommentIds);
+        expect(message).toBeNull();
     });
 
     it('should not reply to itself', () => {

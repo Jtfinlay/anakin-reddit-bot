@@ -19,14 +19,10 @@ const stream = client.CommentStream({
     results: 100
 });
 
-//Keep track of everything we have commented on, if we
-//find a reply to one of our comments we can check for a reply.
-let commentIds = []; //TODO: This technique could be better I suppose.
-
 stream.on('comment', comment => {
     console.log('process comment');
     //Go through each possible response and look for a match.
-    const reply = messages.extractReply(comment, commentIds);
+    const reply = messages.extractReply(comment);
 
     if (!reply) {
         return;
@@ -38,10 +34,6 @@ stream.on('comment', comment => {
     comment.reply(reply)
         .then(resp => {
             console.log(`Responded to message.`);
-
-            //Add the comment id to the array, we'll use it to
-            //check if a user has replied to one of our comments.
-            commentIds.push('t1_' + resp.id);
         })
         .catch(err => {
             console.error(err);

@@ -1,59 +1,4 @@
 {
-    "userReplies": [
-        {
-            "user": "Obiwan-Kenobi-Bot",
-            "responses": [
-                "Obi-Wan, may the force be with you.",
-                "From my point of view, the Jedi are evil!",
-                "You mean, do I know how to land what's left of this thing?",
-                "Well, you know, Master, I couldn't find a speeder that I really liked…",
-                "If you're not with me, then you're my enemy!",
-                "You will not take her from me!",
-                "I should've known the Jedi were plotting to take over!",
-                "You underestimate my power!",
-                "I HATE YOU!",
-                "There isn't a droid made that can out fly you, Master, and no other way to get to the Chancellor...",
-                "I'm coming around on your tail.",
-                "I know, I know!",
-                "Why else do you think we were assigned to her, if not to find the killer? Protection is a job for local security... not Jedi.",
-                "It's overkill, Master. Investigation is implied in our mandate.",
-                "Quiet as a tomb. I don't like just waiting here for something to happen to her.",
-                "I know, but we also want to catch this assassin. Don't we, Master?",
-                "Not another lecture, Master. Not on the economics of politics.... It's too early in the morning... and besides, you're generalising. The Chancellor doesn't appear to be corrupt",
-                "I retransmitted it as you requested, Master. Then we decided to come and rescue you.",
-                "No we're not!! Land this ship!",
-                "Master, I've disappointed you. I have not been very appreciative of your training... I have been arrogant and I apologize... I've just been so frustrated with the Council. Your friendship means everything to me.",
-                "He was not so successful the last time he met Grievous.",
-                "The Chancellor is not a bad man, Obi-Wan. He befriended me. He's watched out for me ever since I arrived here.",
-                "Why didn't the Council give me this assignment when we were in session?",
-                "I sense there's more to this talk than you're saying.",
-                "Master, you of all people should have confidence in my abilities. I know where my loyalties lie."
-            ]
-        },
-        {
-            "user": "sheev-bot",
-            "responses": [
-                "He could actually... save people from death?",
-                "Is it possible to learn this power?",
-                "I will do whatever you ask.",
-                "Just help me save Padmé's life. I can't live without her.",
-                "I pledge myself to your teachings.",
-                "I shouldn't...",
-                "I shouldn't have done that, Chancellor. It's not the Jedi way.",
-                "I agree. The Jedi's next move will be against the Senate.",
-                "I understand, Master.",
-                "What about the other Jedi spread across the galaxy?",
-                "With all due respect, sir, the Council is in no mood for more constitutional amendments."
-            ]
-        },
-        {
-            "user": "GryvousBot",
-            "responses": [
-                "You're shorter than I expected.",
-                "At last, we'll be able to capture that monster and end this war."
-            ]
-        }
-    ],
     "messages": [
         {
             "pattern": "may the force be with you[.]?$",
@@ -107,6 +52,24 @@
             ]
         },
         {
+            "pattern": "fly a (.*) like this?$",
+            "responses": [
+                "You mean, do I know how to land what's left of this thing?"
+            ]
+        },
+        {
+            "pattern": "Why do I get the feeling you're going to be the death of me?$",
+            "responses": [
+                "Don't say that, Master. You're the closest thing I have to a father."
+            ]
+        },
+        {
+            "pattern": "Aggressive negotiations\\??( What's that\\?)?$",
+            "responses": [
+                "Ah, well, it's negotiations with a lightsaber."
+            ]
+        },
+        {
             "pattern": "i will do what i must[.!]?$",
             "responses": [
                 "You will try."
@@ -116,9 +79,7 @@
             "pattern": "bring balance to (.*),? not leave it in (.*)[.!]?$",
             "responses": [
                 "I hate you!",
-                "I HATE YOU!",
-                "[I hate you!](https://media.giphy.com/media/Mir5fnHxvXrTa/giphy.gif)",
-                "[I HATE YOU!](https://media.giphy.com/media/Mir5fnHxvXrTa/giphy.gif)"
+                "I HATE YOU!"
             ]
         },
         {
@@ -134,13 +95,13 @@
             ]
         },
         {
-            "pattern": "It's ironic he could save others from death, but not himself",
+            "pattern": "He could save others from death, but not himself[.!]?$",
             "responses": [
                 "Is it possible to learn this power?"
             ]
         },
         {
-            "pattern": "ever hear the tragedy of Darth Plagueis",
+            "pattern": "(did you|have you) ever heard? the (.*) of Darth Plagueis The Wise\\?$",
             "responses": [
                 "No."
             ]
@@ -190,6 +151,72 @@
             ]
         },
         {
+            "pattern": "I heard there was an attack on the Jedi Temple...( you can see the smoke from here.)?$",
+            "responses": [
+                "I'm fine. I'm fine. I came to see if you and the baby are safe."
+            ]
+        },
+        {
+            "pattern": "I can't believe that!?$",
+            "responses": [
+                "I couldn't either at first, but it's true. I saw Master Windu attempt to assassinate the Chancellor myself."
+            ]
+        },
+        {
+            "pattern": "Anakin, what are you going to do\\?$",
+            "responses": [
+                "I will not betray the Republic... my loyalties lie with the Chancellor and with the Senate... and with you."
+            ]
+        },
+        {
+            "pattern": "Obi-Wan was right. You've changed.?$",
+            "responses": [
+                "I don't want to hear any more about my old Master. The Jedi turned against me. Don't you turn against me!"
+            ]
+        },
+        {
+            "pattern": "Come back(!.)? I love you(.!)?$",
+            "responses": [
+                "LIAR! You're with him. You've betrayed me! You brought him here to kill me!"
+            ]
+        },
+        {
+            "pattern": "Let her go Anakin$",
+            "responses": [
+                "What have you and she been up to?"
+            ]
+        },
+        {
+            "pattern": "Let her go(!.)?$",
+            "responses": [
+                "You turned her against me."
+            ]
+        },
+        {
+            "pattern": "You have done that yourself(.!)?$",
+            "responses": [
+                "You will not take her from me."
+            ]
+        },
+        {
+            "pattern": "you are going down a path I can't follow.?$",
+            "responses": [
+                "Because of Obi-Wan?"
+            ]
+        },
+        {
+            "pattern": "all I want is your love.?$",
+            "responses": [
+                "Love won't save you, Padme. Only my new powers can do that."
+            ]
+        },
+        {
+            "pattern": "you killed younglings(.!\\?)?$",
+            "responses": [
+                "Obi-Wan is trying to turn you against me."
+            ]
+        },
+        {
             "pattern": "anakin[,.]? g(o{2,})d[.!]?$",
             "responses": [
                 "I should not have done that, it's not the Jedi way.",
@@ -199,8 +226,7 @@
         {
             "pattern": "it seems,? in your ([a-zA-Z\\s]*),? you killed ([a-zA-Z\\s]*)[.]$",
             "responses": [
-                "NOOOOOOOOOOOOOO!",
-                "Do not want."
+                "NOOOOOOOOOOOOOO!"
             ]
         },
         {
@@ -210,16 +236,16 @@
             ]
         },
         {
-            "pattern": "sand",
+            "pattern": " sand",
             "responses": [
                 "I don't like sand. It's coarse and rough and irritating and it gets everywhere.",
                 "Don't make me kill you."
             ]
         },
         {
-            "pattern": "Anakin",
+            "pattern": "(Anakin|Master Skywalker|General SkyWalker)",
             "responses": [
-                "One day, I will become the greatest Jedi EVER. I will even learn how to stop people from dying.",
+                "One day, I will become the most powerful Jedi EVER. I will even learn how to stop people from dying.",
                 "You're asking me to be rational. I know that is something I cannot do.",
                 "I've got a bad feeling about this.",
                 "You underestimate my power!",
@@ -238,9 +264,22 @@
                 "I tried it once, wasn't very good at it. besides, the role of Master comes easily to me.",
                 "You're reckless little one. you would never have made it as Obi-Wan's apprentice. but, you might make it as mine.",
                 "Well doing what the Jedi council says, yeah, that's one thing. How we go about it, that's another idea made by myself.",
-                "I understand. More than you realize i understand wanting to walk away from the order.",
+                "I understand. More than you realize I understand wanting to walk away from the order.",
                 "You thinking what I'm thinking?",
-                "What kind of nonsense is this, put me on the Council and not make me a Master!?? That's never been done in the history of the Jedi. It's insulting!"
+                "What kind of nonsense is this, put me on the Council and not make me a Master!?? That's never been done in the history of the Jedi. It's insulting!",
+                "Not another lecture, Master. Not on the economics of politics.... It's too early in the morning... and besides, you're generalising. The Chancellor doesn't appear to be corrupt",
+                "Quiet as a tomb. I don't like just waiting here for something to happen to her.",
+                "I will do whatever you ask.",
+                "Just help me save Padmé's life. I can't live without her.",
+                "I pledge myself to your teachings.",
+                "I shouldn't...",
+                "I shouldn't have done that, Chancellor. It's not the Jedi way.",
+                "I agree. The Jedi's next move will be against the Senate.",
+                "I understand, Master.",
+                "What about the other Jedi spread across the galaxy?",
+                "With all due respect, sir, the Council is in no mood for more constitutional amendments.",
+                "I will not betray the Republic... my loyalties lie with the Chancellor and with the Senate... and with you.",
+                "Where is Padme? Is she safe, is she all right?"
             ]
         }
     ]
