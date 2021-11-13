@@ -4,7 +4,7 @@ const ignoreList = require('./ignore-list.json');
 const groupMatchRegex = /\$(\d*)/gi;
 
 const KNOWN_BOTS = ["Obiwan-Kenobi-Bot", "sheev-bot"];
-const IGNORE_PHRASES = ["You were my brother, Anakin. I loved you."];
+const IGNORE_PHRASES = ["You were my brother, Anakin. I loved you.", "You were my brother, Anakin. I loved you!", "You were my brother, Anakin. I loved you"];
 
 function extractMessage(comment, resp) {
     let regex = new RegExp(resp.pattern, 'gi');
